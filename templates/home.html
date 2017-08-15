@@ -1,0 +1,31 @@
+<!-- home.html -->
+
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static',filename='homecss.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="card"><br>
+	<h1>Upcoming Event</h1><br>
+	<div class="upcoming">
+
+ 		<a href="{{ url_for('elist')}}">
+ 		<img src="https://lonelyplanetimages.imgix.net/a/g/hi/t/7485b46b2aa78a9c4e8384f3f40dca15-mumbai-bombay.jpg?sharp=10&vib=20&w=1200" alt="upcoming event">
+ 	
+ 		<div class="inside">
+	
+			{% for r in row %}
+				<h2 style="text-align: center;">{{ r["eventtitle"]}}</h2>
+				<h3 style="text-align: center;">{{ r["college"] }} on {{ r["doe"] }}</h3>
+			{% endfor %}
+
+    	</div>
+    	</a>
+    </div><br>
+</div>
+{% endblock %}

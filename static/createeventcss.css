@@ -1,0 +1,54 @@
+/*createeventcss.css*/
+
+h2
+{
+    text-align: center;
+}
+
+.card
+{
+    box-shadow: 0px 0px 1rem black;
+    width: 75%;
+    margin: auto;
+    position: relative;
+    top: 40%;
+}
+
+input[type=text], input[type=password], input[type=date]
+{
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=radio]
+{
+	padding: 12px 20px;
+    margin-left: 10rem;
+    display: inline-block;
+}
+
+.button
+{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover
+{
+    box-shadow: 0px 0px 0.5rem black;
+    opacity: 0.8;
+}
+
+.container
+{
+    padding: 16px;
+}

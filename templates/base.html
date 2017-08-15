@@ -1,0 +1,41 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static',filename='basecss.css')}}">
+	<title>College events-{% block title %}{% endblock %}</title>
+	{% endblock %}
+</head>
+
+<body>
+<div id="contain">
+	<div class="header">
+		<nav>
+			<div class="bname">  </div>
+			<div class="menu"> 
+				<ul>
+					<li> <a class="active" href="{{ url_for('home')}}">College events</a> </li>
+					<li> <a class="other"  href="{{ url_for('home')}}">Home</a></li>
+					<li> <a class="other"  href="{{ url_for('elist')}}">Event list</a></li>
+					<li> <a class="other"  href="{{ url_for('createevent')}}">Create Event</a></li>
+					<li> <a class="other"  href="{{ url_for('login')}}">Log In</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<br>
+	<div id="content">
+		{% block content %} {% endblock %}
+	</div><br>
+</div>
+
+<div class="footer">
+	This is the footer.
+</div>
+
+</body>
+
+</html>

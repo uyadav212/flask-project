@@ -1,0 +1,37 @@
+<!-- create_event.html -->
+
+{% extends "base.html" %}
+{% block title %} Add Event {% endblock %}
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='createeventcss.css')}}">
+{% endblock %}
+{% block content %}
+	
+<div class="card"><br>
+  <h2>Give details about event.</h2>
+  <form action="{{ url_for('addrecord') }}" method="POST">
+
+    <div class="container">
+      <label><b>Event Name:</b></label>
+      <input type="text" placeholder="Enter name of the event:" name="eventtitle" required><br>
+
+      <label><b>College Name:</b></label>
+      <input type="text" placeholder="Enter name of the College:" name="college" required><br>
+
+      <label><b>Date of Event:</b></label>
+      <input type="date" placeholder="Enter date of the event(yyyy-mm-dd):" name="doe" required><br>
+
+      <label><b>Category of Event:</b></label><br>
+      <input type="radio" name="category" value="Techfest" checked> Techfest<br>
+    	<input type="radio" name="category" value="Culturalfest"> Cultural Fest<br>
+    	<input type="radio" name="category" value="Literaryfest"> Literary fest<br>
+    	<input type="radio" name="category" value="Sportsfest"> Sports Fest<br>
+    	<input type="radio" name="category" value="other"> Other
+      <input class=" button" type="submit" value="submit">
+    </div>
+    
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<!-- result.html -->
+
+{% extends "base.html" %}
+
+{% block title %} Result {% endblock %}
+
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static',filename='resultcss.css')}}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="upcoming">
+		<div class="inside">
+			<br>
+			<h1>{{ msg }}</h1>
+			<br><br>
+			<h2><a href = "{{ url_for('home')}}">Go back to home page</a></h2>
+ 		</div>
+    </div>
+
+{% endblock %}

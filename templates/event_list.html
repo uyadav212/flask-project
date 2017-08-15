@@ -1,0 +1,53 @@
+<!-- event_list.html -->
+
+{% extends "base.html" %}
+{% block title %} Event List {% endblock %}
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='eventlistcss.css')}}">
+{% endblock %}
+{% block content %}
+   
+<div class="upcoming"><br>
+
+	<h1>Events</h1>
+	<div class="insider">
+		<table>
+		    <tr>
+		        <th>Name of event</th>
+		        <th>Name of college</th>
+		        <th>Date of event</th>
+		        <th>Category of event</th>
+		    </tr>
+		       
+		    {% for row in rows %}
+		    <tr>
+		        <td>{{row["eventtitle"]}}</td>
+		        <td>{{row["college"]}}</td>
+		        <td>{{row["doe"]}}</td>
+		        <td>{{row["category"]}}</td>	
+		    </tr>
+		    {% endfor %}
+		</table>	
+	</div><br>
+
+	{% if rows|length == 0 %}
+		<h1>No Such Data Exist.</h1>
+	{% endif %}
+	<br>
+
+	<div class="search">
+		<form action="{{ url_for('elist') }}" method="POST">
+    		<label><b>Search By:</b></label>
+    		<input type="text" placeholder="Enter Data" name="searchby">
+   			<input type="radio" name="selector" value="ename" checked>Event Name
+   			<input type="radio" name="selector" value="cname">College
+   			<input type="radio" name="selector" value="date">Date
+   			<input type="radio" name="selector" value="category">Category
+    		<input class="button" type="submit" value="submit">
+    	</form>
+	</div><br>
+
+</div>
+
+{% endblock %}
